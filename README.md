@@ -541,13 +541,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [AsyncStorage](https://react-native-async-storage.github.io/async-storage/) - Local storage
 - [React](https://reactjs.org/) - UI library
 
-## 📧 Contact
-
-For questions or suggestions, please contact:
-
-- **GitHub Issues**: [Project Issues](https://github.com/yourusername/TodoListReactNative/issues)
-- **Email**: your.email@example.com
-
 ---
 
 **Built with React Native 0.81.4 🚀**
