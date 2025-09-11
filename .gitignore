@@ -71,3 +71,4 @@ ios/Flipper/
 .expo/
 web-build/
 package-lock.json
+macos/Podfile.lock

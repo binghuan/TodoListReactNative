@@ -4,16 +4,15 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 prepare_react_native_project!
 
 target 'todolist-react-native-macOS' do
-  platform :macos, '10.15'
+  # React Native macOS 0.75 requires at least macOS 11
+  platform :macos, '11.0'
   use_native_modules!
 
   use_react_native!(
     :path => '../node_modules/react-native-macos',
     :hermes_enabled => ENV['USE_HERMES'] == '1',
     :fabric_enabled => ENV['RCT_NEW_ARCH_ENABLED'] == '1',
-    # Flipper is not compatible w/ macOS
-    :flipper_configuration => FlipperConfiguration.disabled,
-    # An absolute path to your application root.
+    # Flipper not used on macOS (omit :flipper_configuration to avoid undefined constant)
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
@@ -25,5 +24,15 @@ target 'todolist-react-native-macOS' do
       installer,
       :mac_catalyst_enabled => false
     )
+    # Ensure every pod uses a consistent minimum macOS deployment target
+    deployment_target = '11.0'
+    installer.pods_project.targets.each do |t|
+      t.build_configurations.each do |config|
+        current = config.build_settings['MACOSX_DEPLOYMENT_TARGET']
+        if current.nil? || current.to_f < deployment_target.to_f
+          config.build_settings['MACOSX_DEPLOYMENT_TARGET'] = deployment_target
+        end
+      end
+    end
   end
 end
