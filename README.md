@@ -1,548 +1,225 @@
-# Todo List React Native App
+# 📝 TodoList React Native App
 
-A clean and elegant todo list application built with React Native, featuring task management, completion tracking, and data persistence functionality.
+![App Illustration](./README/illustration.png)
+
+A cross-platform TodoList application built with React Native, TypeScript, and automatic Java 17 detection.
 
 ## ✨ Features
 
-- 📝 **Add Tasks**: Easily add new todo items
-- ✅ **Mark Complete**: Tap tasks to toggle completion status
-- 🗑️ **Delete Tasks**: Long press or tap delete button to remove tasks
-- 📊 **Statistics**: Real-time display of task completion progress
-- 💾 **Data Persistence**: Automatic data saving using AsyncStorage
-- 🎨 **Modern UI**: Beautiful gradient colors and smooth animations
-- 📱 **Cross-Platform Support**: Support for iOS, Android, Windows and macOS platforms
+- ✅ **Add Tasks** - Add new todo items via input box and button
+- 🎯 **Mark Complete** - Tap items to toggle completion status  
+- 🗑️ **Delete Items** - Tap trash icon to delete items with confirmation dialog
+- 🧹 **Clear Completed** - Clear all completed items with one tap
+- 📊 **Real-time Statistics** - Shows total and completed task counts
+- 🌗 **Dark Mode** - Automatically adapts to system theme
+- 📱 **Cross-platform** - iOS & Android support
+- 🔧 **Safe Area Handling** - Proper layout on all devices
+- ☕ **Automatic Java 17 Detection** - Seamless builds without manual configuration
+- 🇺🇸 **English Interface** - Complete English interface
 
-## 📸 App Preview
+## 🎨 Design Features
 
-![Todo List App Screenshot](./README/illustration.png)
+- **Responsive Design** - Adapts to different screen sizes
+- **Modern UI** - Uses rounded corners, shadows, and modern design elements
+- **Visual Feedback** - Button states and animation effects
+- **Dark Mode** - Automatically switches between light/dark themes
+- **Intuitive Operations** - Follows mobile device usage patterns
 
-### Main Features
-- Intuitive task list interface
-- Real-time completion progress statistics
-- Elegant empty state prompts
-- Smooth interactive experience
+## 🛠️ Technology Stack
 
-### Supported Platforms
-- **iOS** 📱 - Native iOS experience
-- **Android** 🤖 - Material Design style
-- **Windows** 💻 - UWP application
-- **macOS** 🖥️ - Native macOS application
+- **Framework**: React Native 0.81
+- **Language**: TypeScript  
+- **State Management**: React Hooks (useState)
+- **Styling**: StyleSheet API
+- **Safe Area**: react-native-safe-area-context
+- **Platform**: Android & iOS
 
-## 🛠️ Tech Stack
+## 📦 Prerequisites
 
-### Core Technologies
-- **React Native 0.81.4** - Cross-platform mobile and desktop app development framework
-- **React 19.1.0** - User interface library
-- **AsyncStorage 2.2.0** - Local data storage
-- **JavaScript ES6+** - Modern JavaScript syntax
+- Node.js >= 20
+- Java 17-20 (automatically detected)
+- Xcode (for iOS development)
+- Android Studio (for Android development)
 
-### Development Tools
-- **Metro Bundler** - JavaScript bundler
-- **Babel** - JavaScript compiler
-- **ESLint** - Code quality checker
-- **Prettier** - Code formatter
+## 🚀 Getting Started
 
-## 📦 Installation and Setup
+### Installation
 
-### Prerequisites
-
-Before you begin, make sure you have the following software installed:
-
-#### Basic Requirements
-- **Node.js** >= 20.19.4
-- **npm** or **yarn**
-- **React Native CLI**
-
-#### iOS Development (macOS required)
-- **Xcode** >= 16.1
-- **iOS Simulator**
-- **CocoaPods**
-
-#### Android Development
-- **Android Studio**
-- **Android SDK**
-- **Java Development Kit (JDK) 17**
-
-#### Windows Desktop Development
-- **Visual Studio 2019/2022** with UWP workload
-
-#### macOS Desktop Development
-- **Xcode** (on macOS)
-- **CocoaPods**
-
-### Quick Start
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/TodoListReactNative.git
-   cd TodoListReactNative
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **iOS Setup** (macOS only)
-   ```bash
-   cd ios && pod install && cd ..
-   ```
-
-4. **macOS Setup** (macOS only)
-   ```bash
-   cd macos && pod install && cd ..
-   ```
-
-## 🚀 Running the Application
-
-### Development Mode
-
-#### Method 1: Step-by-Step Launch (Recommended)
 ```bash
-# Step 1: Start Metro server
-npm start
-
-# Step 2: Launch app in new terminal
-npm run ios      # iOS
-npm run android  # Android  
-npm run macos    # macOS
+npm install
 ```
 
-#### Method 2: Direct Launch
+### iOS Setup (First time only)
+
 ```bash
-npm run ios      # iOS
-npm run android  # Android
-npm run macos    # macOS
-```
-
-### Platform-Specific Instructions
-
-#### Android
-```bash
-npm run android
-# or
-yarn android
-```
-
-#### iOS (macOS only)
-> 📱 **iOS development requires macOS system and Xcode**
-
-**Prerequisites:**
-- macOS system
-- Xcode installed (download from App Store)
-- CocoaPods dependencies installed
-
-**First-time setup:**
-```bash
-# Install iOS dependencies
 cd ios && pod install && cd ..
 ```
 
-**Method 1: Using separate terminals (Recommended)**
-```bash
-# Terminal 1: Start Metro bundler
-npm start
+### Running the App
 
-# Terminal 2: Start iOS simulator
+#### iOS
+```bash
 npm run ios
 ```
 
-**Method 2: Specify simulator device**
+#### Android  
 ```bash
-# List available simulators
-xcrun simctl list devices
-
-# Specify specific simulator (e.g., iPhone 15)
-npx react-native run-ios --simulator="iPhone 15"
-
-# Specify specific iOS version
-npx react-native run-ios --simulator="iPhone 15" --version="17.0"
+npm run android
 ```
 
-**Method 3: Using Xcode**
+#### Development Server
 ```bash
-# Open Xcode workspace
-open ios/TodoListReactNative.xcworkspace
-# Then select target device in Xcode and press ⌘+R to run
-```
-
-**Method 4: Running on physical device**
-```bash
-# Connect iPhone to Mac, and select your device in Xcode
-npx react-native run-ios --device
-```
-
-**🔧 If you encounter issues:**
-- Ensure latest version of Xcode is installed
-- Accept Xcode license: `sudo xcodebuild -license`
-- Reinstall Pods: `cd ios && pod install --repo-update && cd ..`
-
-#### Windows
-```bash
-npm run windows
-# or
-yarn windows
-```
-
-#### macOS
-> 📱 **macOS support requires completing Desktop Setup steps first**
-
-**Method 1: Using separate terminals (Recommended)**
-```bash
-# Terminal 1: Start Metro bundler
 npm start
-
-# Terminal 2: Start macOS app
-npm run macos
 ```
 
-**Method 2: One-click launch (auto-handles Metro)**
+## 📋 Available Scripts
+
+- `npm run ios` - Build and run on iOS (auto-detects Java 17)
+- `npm run android` - Build and run on Android (auto-detects Java 17)  
+- `npm run ios:direct` - Run iOS without Java detection
+- `npm run android:direct` - Run Android without Java detection
+- `npm start` - Start Metro bundler
+- `npm test` - Run tests
+- `npm run lint` - Run ESLint
+
+## ☕ Java Requirements
+
+This project automatically detects and uses Java 17 for builds. The smart script will:
+
+- 🔍 Search for Java 17 installations automatically
+- 🎯 Prioritize Temurin and AdoptOpenJDK distributions
+- ✅ Verify Java version compatibility
+- 🚀 Set correct JAVA_HOME automatically
+
+If you need to manually set Java:
+
 ```bash
-npx react-native run-macos
-```
-
-**Method 3: Using Xcode**
-```bash
-# Open Xcode workspace
-open macos/todolist-react-native.xcworkspace
-# Then press ⌘+R in Xcode to build and run
-```
-
-**🔧 If you encounter "No bundle URL present" error:**
-1. Ensure Metro bundler is running (Terminal 1)
-2. Press `r` in Metro terminal to reload app
-3. Or restart the application
-
-### Production Builds
-
-#### iOS Release
-```bash
-npm run ios -- --configuration Release
-```
-
-#### Android APK
-```bash
-cd android
-./gradlew assembleRelease
-```
-
-#### Windows Release
-```bash
-npm run build:windows
-```
-
-#### macOS Release
-```bash
-npm run build:macos
+export JAVA_HOME=/path/to/java17
+npm run ios:direct
 ```
 
 ## 📁 Project Structure
 
 ```
 TodoListReactNative/
-├── App.js                 # Main application component
-├── index.js               # Application entry point
-├── package.json           # Project dependencies and scripts
-├── app.json              # React Native configuration
-├── babel.config.js       # Babel configuration
-├── metro.config.js       # Metro bundler configuration
-└── README.md             # Project documentation
+├── App.tsx                 # Main app component
+├── scripts/
+│   └── find-java17.sh     # Auto Java 17 detection
+├── android/               # Android-specific code
+├── ios/                   # iOS-specific code  
+├── README/
+│   └── illustration.png   # App screenshot
+└── package.json          # Dependencies and scripts
 ```
 
-## 📱 Component Features
+## 🔧 Safe Area Handling
 
-### 🎯 Main Components
+This app uses `react-native-safe-area-context` to properly handle device safe areas across different screen sizes and orientations, ensuring content is never hidden behind:
 
-#### `App.js` - Main Application Component
-- State management (using React Hooks)
-- Task CRUD operations
-- Data persistence logic
-- UI rendering and event handling
+- Status bars
+- Navigation bars
+- Home indicators
+- Dynamic island (iPhone 14 Pro/Pro Max)
 
-#### `TodoItem` - Task Item Component
-- Task display and interaction
-- Completion status toggle
-- Delete functionality
+## 🎯 Build Status
 
-#### `Statistics` - Statistics Component
-- Real-time progress calculation
-- Visual completion indicators
-
-### 🎨 Design System
-
-#### Color Scheme
-```javascript
-const colors = {
-  primary: '#667eea',
-  secondary: '#764ba2',
-  accent: '#f093fb',
-  background: '#f8f9fa',
-  surface: '#ffffff',
-  text: '#333333',
-  textSecondary: '#666666',
-  success: '#28a745',
-  danger: '#dc3545'
-};
-```
-
-#### Typography System
-- Headings: 24px, Bold
-- Subheadings: 18px, Medium
-- Body: 16px, Regular
-- Caption: 14px, Regular
-
-#### Spacing System
-- Small: 8px
-- Medium: 16px  
-- Large: 24px
-- Extra Large: 32px
-
-## 📚 API Reference
-
-### Main State
-
-```javascript
-const [todos, setTodos] = useState([]);
-const [inputText, setInputText] = useState('');
-const [editingId, setEditingId] = useState(null);
-```
-
-### Core Functions
-
-#### `addTodo(text)`
-Add new task to the list
-
-#### `toggleTodo(id)`
-Toggle task completion status
-
-#### `deleteTodo(id)`
-Delete task from the list
-
-#### `editTodo(id, newText)`
-Edit existing task text
-
-#### `saveData()`
-Save tasks to AsyncStorage
-
-#### `loadData()`
-Load tasks from AsyncStorage
-
-## 🔧 Configuration
-
-### App Configuration
-
-#### `app.json`
-```json
-{
-  "name": "TodoListReactNative",
-  "displayName": "Todo List",
-  "version": "1.0.0"
-}
-```
-
-#### `package.json` Scripts
-```json
-{
-  "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "macos": "react-native run-macos",
-    "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint ."
-  }
-}
-```
-
-## 🎨 Customization
-
-### Change Theme Colors
-
-1. Find the `colors` object in `App.js`
-2. Modify the desired color values
-3. Restart the app to see changes
-
-```javascript
-const colors = {
-  primary: '#your-primary-color',
-  secondary: '#your-secondary-color',
-  // ... other colors
-};
-```
-
-### Add New Features
-
-1. **Task Categories**
-   ```javascript
-   const [categories, setCategories] = useState(['Work', 'Personal', 'Shopping']);
-   ```
-
-2. **Due Dates**
-   ```javascript
-   const addTodo = (text, dueDate) => {
-     // Add due date logic
-   };
-   ```
-
-3. **Priority Levels**
-   ```javascript
-   const [priority, setPriority] = useState('medium');
-   ```
+- ✅ **Project Setup**: React Native project successfully created
+- ✅ **Core Features**: All todo list functions implemented
+- ✅ **TypeScript**: No compilation errors, type safe
+- ✅ **English Localization**: Complete English interface
+- ✅ **Android Testing**: Successfully built and running on emulator
+- ✅ **iOS Testing**: Successfully built and running on simulator
+- ✅ **Safe Area**: Proper layout handling on all devices
+- ✅ **Java Auto-detection**: Seamless builds without manual Java configuration
 
 ## 🐛 Troubleshooting
 
-### Common Issues
+### Java Issues
+If you encounter Java-related issues:
+1. The app will automatically find Java 17
+2. Install Java 17 if not found: `brew install openjdk@17`
+3. Use direct scripts if auto-detection fails
 
-#### 1. Metro Server Won't Start
+### General Issues
+For other issues, run:
 ```bash
-# Clean cache and restart
-npx react-native start --reset-cache
+npx react-native doctor
 ```
 
-#### 2. iOS Build Failures
-```bash
-cd ios
-rm -rf Pods Podfile.lock
-pod install
-cd ..
-```
+### iOS Build Issues
+If iOS build fails:
+1. Ensure Xcode is installed and updated
+2. Run `cd ios && pod install && cd ..`
+3. Clean build: `cd ios && xcodebuild clean && cd ..`
 
-#### 3. Android Build Failures
-```bash
-cd android
-./gradlew clean
-cd ..
-```
-
-#### 4. App Name Registration Error
-Ensure app names in `app.json` and related config files are consistent.
-
-#### 5. iOS Boost Verification Error (Common Issue)
-If you encounter:
-```
-Error installing boost
-Verification checksum was incorrect, expected f0397ba..., got 9c2f4b...
-```
-
-**Solutions:**
-```bash
-# Method 1: Disable Flipper (Recommended)
-export NO_FLIPPER=1
-cd ios
-rm -rf Pods Podfile.lock
-pod install
-cd ..
-
-# Method 2: Clean CocoaPods cache
-pod cache clean --all
-cd ios && pod install
-
-# Method 3: Use Xcode project file directly
-open ios/TodoListReactNative.xcodeproj
-```
-
-#### 6. iOS Simulator Won't Start
-```bash
-# Reset simulator
-xcrun simctl erase all
-
-# Restart simulator
-npx react-native run-ios --simulator="iPhone 15"
-```
-
-#### 7. Xcode License Issues
-```bash
-# Accept Xcode license
-sudo xcodebuild -license accept
-```
-
-#### 8. macOS "No bundle URL present" Error
-```bash
-# Ensure Metro bundler is running
-npm start
-
-# Restart macOS app in another terminal
-npm run macos
-```
-
-#### 9. "Too many open files" Error
-```bash
-# Install watchman to solve file monitoring issues
-brew install watchman
-
-# Restart Metro bundler
-npm start --reset-cache
-```
-
-### Getting Help
-
-If you encounter issues:
-
-1. Check [TROUBLESHOOTING.md](TROUBLESHOOTING.md) for detailed troubleshooting guide
-2. See [LAUNCH_GUIDE.md](LAUNCH_GUIDE.md) for launch instructions
-3. Ensure your development environment is set up correctly
-
-## 🏗️ Build and Deploy
-
-### Development Builds
-
-Use the above `npm run` commands for development builds.
-
-### Production Builds
-
-#### iOS App Store
-1. Open project in Xcode
-2. Select "Generic iOS Device"
-3. Product > Archive
-4. Upload to App Store Connect
-
-#### Google Play Store
-```bash
-cd android
-./gradlew bundleRelease
-```
-Upload AAB file to Google Play Console.
-
-#### Windows Store
-```bash
-npm run build:windows
-```
-Use Visual Studio to create and upload APPX package.
-
-#### macOS App Store
-1. Open macOS project in Xcode
-2. Product > Archive
-3. Upload to Mac App Store
-
-## 🤝 Contributing
-
-Contributions are welcome! Please:
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Development Guidelines
-
-1. **Code Style**: Follow ESLint configuration
-2. **Commit Messages**: Use clear commit messages
-3. **Testing**: Ensure all tests pass
-4. **Documentation**: Update relevant documentation
+### Android Build Issues
+If Android build fails:
+1. Ensure Android Studio and SDK are properly installed
+2. Check ANDROID_HOME environment variable
+3. Ensure device/emulator is connected: `adb devices`
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is open source and available under the [MIT License](LICENSE).
 
-## 🙏 Acknowledgments
+## 🤝 Contributing
 
-- [React Native](https://reactnative.dev/) - Cross-platform framework
-- [AsyncStorage](https://react-native-async-storage.github.io/async-storage/) - Local storage
-- [React](https://reactjs.org/) - UI library
+Contributions, issues, and feature requests are welcome!
 
----
+```sh
+bundle install
+```
 
-**Built with React Native 0.81.4 🚀**
+Then, and every time you update your native dependencies, run:
 
-Enjoy developing your cross-platform Todo List app!
+```sh
+bundle exec pod install
+```
+
+For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+
+```sh
+# Using npm
+npm run ios
+
+# OR using Yarn
+yarn ios
+```
+
+If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+
+This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+
+## Step 3: Modify your app
+
+Now that you have successfully run the app, let's make changes!
+
+Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+
+When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+
+- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
+- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+
+## Congratulations! :tada:
+
+You've successfully run and modified your React Native App. :partying_face:
+
+### Now what?
+
+- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
+- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+
+# Troubleshooting
+
+If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+
+# Learn More
+
+To learn more about React Native, take a look at the following resources:
+
+- [React Native Website](https://reactnative.dev) - learn more about React Native.
+- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
+- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
+- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
+- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
