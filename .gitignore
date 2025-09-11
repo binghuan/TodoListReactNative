@@ -72,3 +72,4 @@ ios/Flipper/
 web-build/
 package-lock.json
 macos/Podfile.lock
+ios/Podfile.lock
