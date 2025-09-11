@@ -70,3 +70,4 @@ ios/Flipper/
 # Expo
 .expo/
 web-build/
+package-lock.json
