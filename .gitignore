@@ -74,3 +74,32 @@ yarn-error.log
 !.yarn/sdks
 !.yarn/versions
 macos/Podfile.lock
+package-lock.json
+
+# Windows build artifacts
+windows/TodolistReactNative/Generated Files/
+windows/TodolistReactNative/obj/
+windows/TodolistReactNative/bin/
+windows/TodolistReactNative/x64/
+windows/TodolistReactNative/Bundle/
+windows/TodolistReactNative/BundleBuilder/
+windows/x64/
+windows/AppPackages/
+windows/packages/
+*.appx
+*.msix
+*.appxupload
+*.msixupload
+windows/TodolistReactNative/App.cpp.orig
+windows/TodolistReactNative/App.h.orig
+windows/TodolistReactNative/App.idl.orig
+windows/TodolistReactNative/*.vcxproj.user
+windows/TodolistReactNative/*.vcxproj.filters.user
+windows/TodolistReactNative/*.suo
+windows/TodolistReactNative/*.user
+windows/TodolistReactNative/*.sdf
+windows/TodolistReactNative/*.opensdf
+windows/TodolistReactNative/*.db
+windows/TodolistReactNative/.vs/
+windows/.vs/
+msbuild.binlog
