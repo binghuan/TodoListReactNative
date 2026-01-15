@@ -103,3 +103,4 @@ windows/TodolistReactNative/*.db
 windows/TodolistReactNative/.vs/
 windows/.vs/
 msbuild.binlog
+yarn.lock
